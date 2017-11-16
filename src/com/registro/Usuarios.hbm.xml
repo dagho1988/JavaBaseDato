@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18/12/2012 02:51:41 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+	<class name="com.registro.Usuarios" table="DAGIRALDO.USUARIOS">
+		<id name="userId" type="java.lang.Long">
+           	<column name="USER_ID" precision="10" scale="0" />
+           	<generator class="sequence">
+           		<param name="sequence">SQ_USUARIOS</param>
+           	</generator>
+       	</id>
+        <property name="nombreCompleto" type="java.lang.String">
+            <column name="NOMBRE_COMPLETO" length="100" not-null="true" />
+        </property>
+        <property name="direccion" type="java.lang.String">
+            <column name="DIRECCION" length="50" />
+        </property>
+        <property name="telefono" type="java.lang.String">
+            <column name="TELEFONO" length="50" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" length="100" not-null="true" />
+        </property>
+        <property name="fechaRegistro" type="java.util.Date">
+            <column name="FECHA_REGISTRO" not-null="true" />
+        </property>
+		<property name="estado" type="java.math.BigDecimal">
+           	<column name="ESTADO" precision="10" scale="0" />
+       	</property>
+        <property name="login" type="java.lang.String">
+            <column name="LOGIN" length="20" not-null="true" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" length="20" not-null="true" />
+        </property>
+	</class>
+</hibernate-mapping>
