@@ -40,20 +40,18 @@ public class UsuariosLogicImp implements UsuariosLogic {
 	@Override
 	public boolean update(Usuarios instance) throws Exception {
 		validarTipoConexion();
-		UsuariosDao dao = FabricaDao.create(tipo);
-		return dao.update(instance);
+		return FabricaDao.create(tipo).update(instance);
 	}
 
 	@Override
 	public List<Usuarios> get() throws Exception {
 		validarTipoConexion();
-		UsuariosDao dao = FabricaDao.create(tipo);
-		return dao.get();
+		return FabricaDao.create(tipo).get();
 	}
 
 	public void validarTipoConexion() throws Exception {
-		if(tipo == null || tipo.trim().equals("")) {
-			throw new Exception("No se indicó el tipo de conexión a la base de datos");
+		if(tipo == null || "".trim().equals(tipo)) {
+			throw new Exception("No se indicÃ³ el tipo de conexiÃ³n a la base de datos");
 		}
 	}
 }
